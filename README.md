@@ -1,5 +1,6 @@
 # UAS_DeepLearning
-Nama Anggota : 1. Arya Mulahernawan        (G1A022029)
+Nama Anggota : 
+               1. Arya Mulahernawan        (G1A022029)
 
                2. Muhammad Kevin Rinaldi   (G1A022059)
                
@@ -377,152 +378,258 @@ Dalam penelitian ini digunakan tiga model, yaitu Hybrid CNN–LSTM, Support Vect
 
 Hybrid CNN–LSTM merupakan model deep learning yang menggabungkan Convolutional Neural Network (CNN) dan Long Short-Term Memory (LSTM). CNN digunakan untuk mengekstraksi fitur spasial antar sensor dalam setiap window waktu, sedangkan LSTM digunakan untuk memodelkan ketergantungan temporal pada data time series.
 
-Arsitektur Model
+**Arsitektur Model**
 
 Model CNN–LSTM dibangun menggunakan beberapa lapisan sebagai berikut:
 
-Convolutional Layer (Conv1D)
+1. Convolutional Layer (Conv1D)
 
-Conv1D dengan 64 filter dan kernel size 3
+- Conv1D dengan 64 filter dan kernel size 3
 
-Fungsi aktivasi ReLU
+- Fungsi aktivasi ReLU
 
-Padding same
+- Padding same
 
-Regularisasi L2 untuk mengurangi overfitting
+- Regularisasi L2 untuk mengurangi overfitting
 
-Batch Normalization & Max Pooling
+2. Batch Normalization & Max Pooling
 
-Batch normalization untuk menstabilkan proses pelatihan
+- Batch normalization untuk menstabilkan proses pelatihan
 
-MaxPooling1D untuk reduksi dimensi fitur
+- MaxPooling1D untuk reduksi dimensi fitur
 
-Dropout Layer
+3. Dropout Layer
 
-Dropout 0.3 digunakan untuk mencegah overfitting
+- Dropout 0.3 digunakan untuk mencegah overfitting
 
-Convolutional Layer Kedua
+4. Convolutional Layer Kedua
 
-Conv1D dengan 128 filter
+- Conv1D dengan 128 filter
 
-Konfigurasi serupa dengan layer pertama
+- Konfigurasi serupa dengan layer pertama
 
-LSTM Layer
+5. LSTM Layer
 
-64 unit LSTM
+- 64 unit LSTM
 
-Aktivasi tanh dan sigmoid
+- Aktivasi tanh dan sigmoid
 
-Dropout dan recurrent dropout
+- Dropout dan recurrent dropout
 
-Return sequences diset False
+- Return sequences diset False
 
-Fully Connected Layer
+6. Fully Connected Layer
 
-Dense 64 neuron dengan aktivasi ReLU
+- Dense 64 neuron dengan aktivasi ReLU
 
-Dropout 0.2
+- Dropout 0.2
 
-Output Layer
+7. Output Layer
 
-Dense 1 neuron dengan aktivasi sigmoid untuk klasifikasi biner
+- Dense 1 neuron dengan aktivasi sigmoid untuk klasifikasi biner
 
-Parameter Utama Model CNN–LSTM
+**Parameter Utama Model CNN–LSTM**
 
-Conv1D filters: 64 dan 128
+- Conv1D filters: 64 dan 128
 
-Kernel size: 3
+- Kernel size: 3
 
-LSTM units: 64
+- LSTM units: 64
 
-Dropout: 0.2–0.3
+- Dropout: 0.2–0.3
 
-Regularization: L2 (1e-4)
+- Regularization: L2 (1e-4)
 
-Output activation: Sigmoid
+- Output activation: Sigmoid
 
-Kelebihan CNN–LSTM
+**Kelebihan CNN–LSTM**
 
-Mampu menangkap pola spasial dan temporal secara bersamaan
+- Mampu menangkap pola spasial dan temporal secara bersamaan
 
-Cocok untuk data sensor IoT multivariat
+- Cocok untuk data sensor IoT multivariat
 
-Efektif untuk deteksi anomali berbasis urutan waktu
+- Efektif untuk deteksi anomali berbasis urutan waktu
 
-Kekurangan CNN–LSTM
+**Kekurangan CNN–LSTM**
 
-Membutuhkan komputasi yang lebih besar
+- Membutuhkan komputasi yang lebih besar
 
-Sensitif terhadap pemilihan hyperparameter
+- Sensitif terhadap pemilihan hyperparameter
 
 2. Support Vector Machine (SVM)
 
 Support Vector Machine merupakan algoritma klasifikasi yang bekerja dengan mencari hyperplane optimal untuk memisahkan dua kelas. Karena SVM tidak dapat langsung menerima input berbentuk time series, data hasil sliding window diratakan (flatten) terlebih dahulu menjadi vektor satu dimensi.
 
 
-Parameter Model SVM
+**Parameter Model SVM**
 
-kernel = 'rbf'
+- kernel = 'rbf': 
 Menggunakan kernel Radial Basis Function untuk menangkap pola non-linear
 
-C = 1.0
+- C = 1.0:
 Parameter regulasi untuk mengontrol trade-off antara margin dan kesalahan klasifikasi
 
-gamma = 'scale'
+- gamma = 'scale':
 Menyesuaikan parameter kernel berdasarkan jumlah fitur
 
-class_weight = 'balanced'
+- class_weight = 'balanced':
 Digunakan untuk menangani ketidakseimbangan kelas
 
-Kelebihan SVM
+**Kelebihan SVM**
 
-Efektif pada dataset berdimensi tinggi
+- Efektif pada dataset berdimensi tinggi
 
-Mampu menangkap hubungan non-linear
+- Mampu menangkap hubungan non-linear
 
-Kekurangan SVM
+**Kekurangan SVM**
 
-Tidak mempertimbangkan informasi temporal
+- Tidak mempertimbangkan informasi temporal
 
-Kurang optimal untuk data time series kompleks
+- Kurang optimal untuk data time series kompleks
 
 3. Random Forest
 
 Random Forest adalah algoritma ensemble learning berbasis pohon keputusan yang menggabungkan banyak pohon untuk menghasilkan prediksi yang lebih stabil dan akurat. Seperti SVM, data time series juga diratakan sebelum digunakan sebagai input model.
 
-Parameter Model Random Forest
+**Parameter Model Random Forest**
 
-n_estimators = 200
+- n_estimators = 200:
 Jumlah pohon keputusan dalam hutan
 
-max_depth = None
+- max_depth = None:
 Tidak ada batasan kedalaman pohon
 
-min_samples_split = 2
+- min_samples_split = 2:
 Jumlah minimum sampel untuk membagi node
 
-min_samples_leaf = 1
+- min_samples_leaf = 1:
 Jumlah minimum sampel pada daun
 
-class_weight = 'balanced'
+- class_weight = 'balanced':
 Mengatasi ketidakseimbangan kelas
 
-random_state = 42
+- random_state = 42:
 Digunakan untuk memastikan reprodusibilitas
 
-n_jobs = -1
+- n_jobs = -1:
 Menggunakan seluruh core CPU untuk pelatihan
 
-Kelebihan Random Forest
+**Kelebihan Random Forest**
 
-Tahan terhadap overfitting
+- Tahan terhadap overfitting
 
-Dapat menangani data non-linear
+- Dapat menangani data non-linear
 
-Mudah diinterpretasikan
+- Mudah diinterpretasikan
 
-Kekurangan Random Forest
+**Kekurangan Random Forest**
 
-Tidak mempertimbangkan urutan waktu
+- Tidak mempertimbangkan urutan waktu
 
-Kurang optimal untuk pola temporal jangka panjang
+- Kurang optimal untuk pola temporal jangka panjang
+
+
+
+## Hyperparameter Tuning – Hybrid CNN–LSTM
+
+Hyperparameter tuning dilakukan untuk memperoleh konfigurasi terbaik dari model Hybrid CNN–LSTM dalam mendeteksi anomali pada data sensor IoT sistem pompa air. Proses ini bertujuan untuk meminimalkan validation loss serta meningkatkan kemampuan generalisasi model terhadap data yang belum pernah dilihat.
+
+Tuning dilakukan menggunakan Keras Tuner dengan metode Random Search.
+
+**Tuning Objective**
+
+- Objective: val_loss (minimization)
+
+- Alasan: Validation loss dipilih untuk memastikan model tidak hanya baik pada data latih, tetapi juga mampu melakukan generalisasi dengan baik.
+
+**Metode Tuning**
+
+- Tuning Strategy: Random Search
+
+- Library: Keras Tuner
+
+- Jumlah Trial: 5
+
+- Epoch per Trial: 20
+
+- Batch Size: 64
+
+Untuk mencegah overfitting, digunakan Early Stopping dengan konfigurasi:
+
+- monitor = val_loss
+
+- patience = 5
+
+- restore_best_weights = True
+
+**Model Architecture (Tuned)**
+
+Model dibangun menggunakan arsitektur Hybrid CNN–LSTM yang terdiri dari:
+
+- CNN untuk ekstraksi fitur spasial antar sensor
+
+- LSTM untuk memodelkan dependensi temporal
+
+- Dense layer untuk klasifikasi biner (Normal vs Anomaly)
+
+Hyperparameter Search Space
+
+| Layer / Block | Parameter | Value / Range | Keterangan |
+| :--- | :--- | :--- | :--- |
+| **🔹 CNN Block 1** | `filters_1` | 64 | Jumlah filter CNN |
+| | `kernel_1` | 3 | Ukuran kernel |
+| | `l2_1` | 1e-4 | Regularisasi L2 |
+| | `dropout_1` | 0.2 – 0.5 | Pencegah overfitting |
+| **🔹 CNN Block 2** | `filters_2` | 128 | Ekstraksi fitur tingkat lanjut |
+| | `kernel_2` | 3 | Ukuran kernel |
+| | `l2_2` | 1e-4 | Regularisasi L2 |
+| | `dropout_2` | 0.2 – 0.5 | Pencegah overfitting |
+| **🔹 LSTM Layer** | `lstm_units` | 64 | Jumlah unit LSTM |
+| | `dropout_lstm` | 0.2 – 0.5 | Dropout temporal |
+| | `l2_lstm` | 1e-4 | Regularisasi L2 |
+| **🔹 Dense Layer** | `dense_units` | 64 | Jumlah neuron Dense layer |
+| **🔹 Optimizer** | `learning_rate` | 1e-4, 3e-4, 1e-3 | Opsi laju pembelajaran |
+
+Model terbaik hasil hyperparameter tuning memiliki konfigurasi sebagai berikut:
+
+Conv1D (64 filters)
+
+Batch Normalization
+
+MaxPooling1D
+
+Dropout
+
+Conv1D (128 filters)
+
+Batch Normalization
+
+MaxPooling1D
+
+Dropout
+
+LSTM (64 units)
+
+Dense (64 units)
+
+Output Dense (1 unit, Sigmoid)
+
+📊 Model Statistics
+
+Total Parameters: 88,961
+
+Trainable Parameters: 88,577
+
+Non-trainable Parameters: 384
+
+Model ini cukup ringan dan efisien, sehingga memungkinkan untuk diterapkan pada sistem monitoring berbasis IoT.
+
+📈 Analysis & Insight
+
+Kombinasi CNN + LSTM efektif dalam menangkap pola spasial dan temporal.
+
+Dropout di kisaran 0.2 – 0.3 memberikan keseimbangan antara stabilitas dan generalisasi.
+
+Learning rate 1e-3 memberikan konvergensi terbaik berdasarkan validation loss.
+
+Random Search mampu menemukan konfigurasi optimal dengan jumlah trial yang relatif kecil.
