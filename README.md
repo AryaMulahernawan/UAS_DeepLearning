@@ -573,64 +573,108 @@ Model dibangun menggunakan arsitektur Hybrid CNN–LSTM yang terdiri dari:
 
 - Dense layer untuk klasifikasi biner (Normal vs Anomaly)
 
-Hyperparameter Search Space
+**Hyperparameter Search Space**
 
 | Layer / Block | Parameter | Value / Range | Keterangan |
 | :--- | :--- | :--- | :--- |
-| **🔹 CNN Block 1** | `filters_1` | 64 | Jumlah filter CNN |
+| ** CNN Block 1** | `filters_1` | 64 | Jumlah filter CNN |
 | | `kernel_1` | 3 | Ukuran kernel |
 | | `l2_1` | 1e-4 | Regularisasi L2 |
 | | `dropout_1` | 0.2 – 0.5 | Pencegah overfitting |
-| **🔹 CNN Block 2** | `filters_2` | 128 | Ekstraksi fitur tingkat lanjut |
+| ** CNN Block 2** | `filters_2` | 128 | Ekstraksi fitur tingkat lanjut |
 | | `kernel_2` | 3 | Ukuran kernel |
 | | `l2_2` | 1e-4 | Regularisasi L2 |
 | | `dropout_2` | 0.2 – 0.5 | Pencegah overfitting |
-| **🔹 LSTM Layer** | `lstm_units` | 64 | Jumlah unit LSTM |
+| ** LSTM Layer** | `lstm_units` | 64 | Jumlah unit LSTM |
 | | `dropout_lstm` | 0.2 – 0.5 | Dropout temporal |
 | | `l2_lstm` | 1e-4 | Regularisasi L2 |
-| **🔹 Dense Layer** | `dense_units` | 64 | Jumlah neuron Dense layer |
-| **🔹 Optimizer** | `learning_rate` | 1e-4, 3e-4, 1e-3 | Opsi laju pembelajaran |
+| ** Dense Layer** | `dense_units` | 64 | Jumlah neuron Dense layer |
+| ** Optimizer** | `learning_rate` | 1e-4, 3e-4, 1e-3 | Opsi laju pembelajaran |
 
-Model terbaik hasil hyperparameter tuning memiliki konfigurasi sebagai berikut:
+**Best Model Summary**
 
-Conv1D (64 filters)
+Berikut adalah rincian layer, bentuk output (*output shape*), dan jumlah parameter dari model Hybrid CNN-LSTM yang dibangun:
 
-Batch Normalization
+| Layer (Type) | Output Shape | Param # |
+| :--- | :--- | :--- |
+| **conv1d** (Conv1D) | `(None, 30, 64)` | 9,856 |
+| **batch_normalization** | `(None, 30, 64)` | 256 |
+| **max_pooling1d** | `(None, 15, 64)` | 0 |
+| **dropout** | `(None, 15, 64)` | 0 |
+| **conv1d_1** (Conv1D) | `(None, 15, 128)` | 24,704 |
+| **batch_normalization_1** | `(None, 15, 128)` | 512 |
+| **max_pooling1d_1** | `(None, 7, 128)` | 0 |
+| **dropout_1** | `(None, 7, 128)` | 0 |
+| **lstm** (LSTM) | `(None, 64)` | 49,408 |
+| **dropout_2** | `(None, 64)` | 0 |
+| **dense** (Dense) | `(None, 64)` | 4,160 |
+| **dropout_3** | `(None, 64)` | 0 |
+| **dense_1** (Dense) | `(None, 1)` | 65 |
+| **Total Params** | | **88,961** |
 
-MaxPooling1D
+**Model Statistics**
 
-Dropout
+- Total Parameters: 88,961
 
-Conv1D (128 filters)
+- Trainable Parameters: 88,577
 
-Batch Normalization
-
-MaxPooling1D
-
-Dropout
-
-LSTM (64 units)
-
-Dense (64 units)
-
-Output Dense (1 unit, Sigmoid)
-
-📊 Model Statistics
-
-Total Parameters: 88,961
-
-Trainable Parameters: 88,577
-
-Non-trainable Parameters: 384
+- Non-trainable Parameters: 384
 
 Model ini cukup ringan dan efisien, sehingga memungkinkan untuk diterapkan pada sistem monitoring berbasis IoT.
 
-📈 Analysis & Insight
 
-Kombinasi CNN + LSTM efektif dalam menangkap pola spasial dan temporal.
+## Evaluation
 
-Dropout di kisaran 0.2 – 0.3 memberikan keseimbangan antara stabilitas dan generalisasi.
+| Model | Train Accuracy | 
+| :--- | :--- | 
+| Hybrid CNN-LSTM | 0.9223 | 
+| Hybrid CNN-LSTM  (dengan Tuning)|0.91 |
+| SVM | 0.9418 |  
+| Random Forest | 0.9044  |
 
-Learning rate 1e-3 memberikan konvergensi terbaik berdasarkan validation loss.
+### Dampak Model terhadap Business Understanding
+**Apakah Model Menjawab Problem Statement?**
 
-Random Search mampu menemukan konfigurasi optimal dengan jumlah trial yang relatif kecil.
+Ya. Model deteksi anomali berbasis data sensor IoT yang dikembangkan mampu membedakan kondisi normal dan anomali pada sistem pompa air berbasis time series.
+Arsitektur hybrid CNN–LSTM berhasil mengekstraksi fitur spasial dan temporal dari data sensor multivariat secara efektif, bahkan pada kondisi data yang tidak seimbang.
+
+Evaluasi kuantitatif menunjukkan bahwa performa model dapat diukur secara objektif, sehingga pendekatan yang digunakan relevan untuk permasalahan deteksi anomali pada sistem pompa air berbasis IoT.
+
+**Apakah Model Berhasil Mencapai Goals?**
+
+Ya. Model berhasil mencapai tujuan utama proyek, yaitu membangun sistem deteksi anomali yang andal dan terukur.
+
+Hasil akurasi model:
+
+Hybrid CNN–LSTM: 92.23%
+
+Hybrid CNN–LSTM (dengan hyperparameter tuning): 91%
+
+SVM (Baseline): 94.18%
+
+Random Forest (Baseline): 90.44%
+
+Pendekatan sliding window efektif dalam menangkap pola temporal pada data sensor, dan evaluasi menggunakan metrik seperti accuracy, precision, recall, F1-score, serta ROC-AUC memberikan gambaran kinerja model secara menyeluruh.
+
+**Apakah Solusi yang Direncanakan Berdampak?**
+
+Ya. Solusi ini memberikan dampak positif terhadap aspek operasional dan bisnis.
+Sistem deteksi anomali otomatis berbasis deep learning memungkinkan pemantauan kondisi pompa air secara real-time tanpa ketergantungan pada pengawasan manual.
+
+Implementasi sistem ini mendukung predictive maintenance, dengan manfaat utama:
+
+- Mengurangi risiko gangguan pasokan air
+
+- Menekan biaya perawatan akibat keterlambatan deteksi kerusakan
+
+- Meningkatkan keandalan dan efisiensi operasional sistem pompa air
+
+Dengan demikian, solusi yang dikembangkan tidak hanya unggul secara teknis, tetapi juga memberikan nilai nyata dalam pengelolaan infrastruktur berbasis IoT.
+
+## Kesimpulan
+
+Proyek ini berhasil mengembangkan sistem deteksi anomali berbasis data sensor IoT untuk sistem pompa air menggunakan pendekatan time series. Model hybrid CNN–LSTM mampu mempelajari pola spasial dan temporal dari data sensor multivariat sehingga dapat membedakan kondisi normal dan anomali secara efektif.
+
+Berdasarkan hasil eksperimen, model CNN–LSTM menunjukkan performa yang kompetitif dengan akurasi mencapai 92.23%, sementara model baseline seperti SVM dan Random Forest digunakan sebagai pembanding untuk mengevaluasi peningkatan kinerja yang diperoleh dari pendekatan deep learning. Evaluasi menggunakan berbagai metrik memastikan bahwa kinerja model dapat diukur secara objektif, meskipun data memiliki ketidakseimbangan kelas.
+
+Secara keseluruhan, sistem yang dikembangkan berpotensi mendukung penerapan predictive maintenance pada sistem pompa air, membantu deteksi dini kegagalan, mengurangi risiko gangguan operasional, serta menekan biaya perawatan. Dengan demikian, solusi ini tidak hanya valid secara teknis, tetapi juga relevan dan bernilai dalam konteks bisnis dan pengelolaan infrastruktur berbasis IoT.
