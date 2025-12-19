@@ -1,5 +1,6 @@
 # UAS_DeepLearning
 Nama Anggota : 
+
                1. Arya Mulahernawan        (G1A022029)
 
                2. Muhammad Kevin Rinaldi   (G1A022059)
