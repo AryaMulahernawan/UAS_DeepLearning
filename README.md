@@ -6,7 +6,7 @@ Nama Anggota :
                2. Muhammad Kevin Rinaldi   (G1A022059)
                
                3. Yebi Depriansyah         (G1A022063)
-
+Dosen Pengampu:  Ir. Arie Vatresia, S.T., M.T.I., P.hD., IPP.
 ## Project Overview
 
 Perkembangan teknologi Internet of Things (IoT) telah mendorong penggunaan sensor secara luas dalam berbagai sektor industri, termasuk sistem pemantauan dan pengelolaan infrastruktur air. Sensor-sensor ini secara kontinu menghasilkan data time series dalam jumlah besar yang merepresentasikan kondisi operasional mesin, seperti perubahan sinyal sensor dari waktu ke waktu. Meskipun data tersebut sangat berpotensi untuk digunakan dalam pemantauan kondisi sistem, kompleksitas dan volume data yang tinggi sering kali menyulitkan proses analisis secara manual, terutama dalam mendeteksi indikasi awal kegagalan mesin.
