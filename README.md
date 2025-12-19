@@ -1,6 +1,8 @@
 # UAS_DeepLearning
 Nama Anggota : 1. Arya Mulahernawan        (G1A022029)
+
                2. Muhammad Kevin Rinaldi   (G1A022059)
+               
                3. Yebi Depriansyah         (G1A022063)
 
 ## Project Overview
@@ -161,8 +163,366 @@ Dataset Pump Sensor Data dipilih dalam penelitian ini berdasarkan beberapa perti
 4. Dataset mendukung pengembangan sistem predictive maintenance guna meningkatkan keandalan dan efisiensi operasional sistem pompa air.
 
 
-| Judul Kolom 1 | Judul Kolom 2 |
-| :--- | :--- |
-| Tulis konten Anda di sini. | Tulis konten kedua di sini. |
-| Baris baru kiri. | Baris baru kanan. |
+| No | Column | Non-Null Count | Dtype |
+| :--- | :--- | :--- | :--- |
+| 0 | Unnamed: 0 | 220320 non-null | int64 |
+| 1 | timestamp | 220320 non-null | object |
+| 2 | sensor_00 | 210112 non-null | float64 |
+| 3 | sensor_01 | 219951 non-null | float64 |
+| 4 | sensor_02 | 220301 non-null | float64 |
+| 5 | sensor_03 | 220301 non-null | float64 |
+| 6 | sensor_04 | 220301 non-null | float64 |
+| 7 | sensor_05 | 220301 non-null | float64 |
+| 8 | sensor_06 | 215522 non-null | float64 |
+| 9 | sensor_07 | 214869 non-null | float64 |
+| 10 | sensor_08 | 215213 non-null | float64 |
+| 11 | sensor_09 | 215725 non-null | float64 |
+| 12 | sensor_10 | 220301 non-null | float64 |
+| 13 | sensor_11 | 220301 non-null | float64 |
+| 14 | sensor_12 | 220301 non-null | float64 |
+| 15 | sensor_13 | 220301 non-null | float64 |
+| 16 | sensor_14 | 220299 non-null | float64 |
+| 17 | sensor_15 | 0 non-null | float64 |
+| 18 | sensor_16 | 220289 non-null | float64 |
+| 19 | sensor_17 | 220274 non-null | float64 |
+| 20 | sensor_18 | 220274 non-null | float64 |
+| 21 | sensor_19 | 220304 non-null | float64 |
+| 22 | sensor_20 | 220304 non-null | float64 |
+| 23 | sensor_21 | 220304 non-null | float64 |
+| 24 | sensor_22 | 220279 non-null | float64 |
+| 25 | sensor_23 | 220304 non-null | float64 |
+| 26 | sensor_24 | 220304 non-null | float64 |
+| 27 | sensor_25 | 220284 non-null | float64 |
+| 28 | sensor_26 | 220300 non-null | float64 |
+| 29 | sensor_27 | 220304 non-null | float64 |
+| 30 | sensor_28 | 220304 non-null | float64 |
+| 31 | sensor_29 | 220248 non-null | float64 |
+| 32 | sensor_30 | 220059 non-null | float64 |
+| 33 | sensor_31 | 220304 non-null | float64 |
+| 34 | sensor_32 | 220252 non-null | float64 |
+| 35 | sensor_33 | 220304 non-null | float64 |
+| 36 | sensor_34 | 220304 non-null | float64 |
+| 37 | sensor_35 | 220304 non-null | float64 |
+| 38 | sensor_36 | 220304 non-null | float64 |
+| 39 | sensor_37 | 220304 non-null | float64 |
+| 40 | sensor_38 | 220293 non-null | float64 |
+| 41 | sensor_39 | 220293 non-null | float64 |
+| 42 | sensor_40 | 220293 non-null | float64 |
+| 43 | sensor_41 | 220293 non-null | float64 |
+| 44 | sensor_42 | 220293 non-null | float64 |
+| 45 | sensor_43 | 220293 non-null | float64 |
+| 46 | sensor_44 | 220293 non-null | float64 |
+| 47 | sensor_45 | 220293 non-null | float64 |
+| 48 | sensor_46 | 220293 non-null | float64 |
+| 49 | sensor_47 | 220293 non-null | float64 |
+| 50 | sensor_48 | 220293 non-null | float64 |
+| 51 | sensor_49 | 220293 non-null | float64 |
+| 52 | sensor_50 | 143303 non-null | float64 |
+| 53 | sensor_51 | 204937 non-null | float64 |
+| 54 | machine_status | 220320 non-null | object |
 
+
+
+
+| Metric | Unnamed: 0 | timestamp | sensor_00 | ... | sensor_50 | sensor_51 | label |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **count** | 220320.0 | 220320 | 210112.0 | ... | 143303.0 | 204937.0 | 220320.0 |
+| **mean** | 110159.5 | 2018-06-16* | 4882.37 | ... | 183.04 | 202.69 | 0.065 |
+| **min** | 0.0 | 2018-04-01 | 0.0 | ... | 27.48 | 27.77 | 0.0 |
+| **25%** | 55079.75 | 2018-05-09 | 2.43 | ... | 167.53 | 179.10 | 0.0 |
+| **50%** | 110159.5 | 2018-06-16 | 2.45 | ... | 193.86 | 197.33 | 0.0 |
+| **75%** | 165239.25 | 2018-07-24 | 2.49 | ... | 219.90 | 216.72 | 0.0 |
+| **max** | 220319.0 | 2018-08-31 | 2.54 | ... | 1000.0 | 1000.0 | 1.0 |
+| **std** | 63601.04 | NaN | 0.41 | ... | 65.25 | 109.58 | 0.24 |
+
+> *Catatan: Kolom tengah disingkat (...) untuk keterbacaan.*
+</details>
+
+
+<img width="597" height="455" alt="image" src="https://github.com/user-attachments/assets/8d96455b-bc38-40d2-a41d-0eb54c8f96e1" />
+
+Pada gambar ditampilkan distribusi kelas label:
+
+- Kelas Normal (0) jauh lebih dominan dibandingkan kelas Anomali (1).
+
+- Dataset bersifat imbalanced, dengan jumlah data anomali yang jauh lebih sedikit.
+
+<img width="1489" height="490" alt="image" src="https://github.com/user-attachments/assets/74becf7b-8fe3-4926-9277-912dd6b0d6dc" />
+<img width="1489" height="490" alt="image" src="https://github.com/user-attachments/assets/14016af8-8e04-42bb-a36c-dc2cf6e3cf22" />
+<img width="1489" height="490" alt="image" src="https://github.com/user-attachments/assets/5bf16c3b-ebc8-48d5-8da4-467cb36f91b2" />
+
+
+
+Pada beberapa gambar diatas adalah sampel dari data sensor yaitu sansor_00, sensor_01 dan sensor_51, ditampilkan visualisasi data time series dari beberapa sensor terhadap waktu (timestamp), dengan titik berwarna merah yang menandakan kondisi anomali.
+
+Interpretasi:
+
+- Garis biru menunjukkan nilai sensor yang berubah secara kontinu dari waktu ke waktu.
+
+- Titik merah merepresentasikan data yang berlabel anomali (RECOVERING atau BROKEN).
+
+- Terlihat bahwa pada periode tertentu terjadi penurunan atau lonjakan nilai sensor yang signifikan, yang berasosiasi dengan kondisi anomali.
+
+- Pola anomali tidak selalu berupa satu titik tunggal, melainkan sering muncul dalam rentang waktu tertentu, menunjukkan bahwa gangguan sistem bersifat temporal.
+  
+Dari beberapa plot sensor yang berbeda, terlihat bahwa:
+
+- Setiap sensor memiliki rentang nilai (skala) yang sangat berbeda, misalnya ada sensor dengan nilai di kisaran kecil, sementara sensor lain memiliki nilai hingga ratusan atau ribuan.
+
+- Beberapa sensor menunjukkan fluktuasi relatif stabil saat kondisi normal, namun berubah drastis saat anomali terjadi.
+
+
+
+## Data Preparation
+
+Tahap Data Preparation dilakukan untuk memastikan data sensor IoT yang digunakan memiliki kualitas yang baik dan siap digunakan dalam proses pemodelan deteksi anomali menggunakan arsitektur hybrid CNN–LSTM. Tahapan ini mencakup pemilihan fitur, penanganan nilai hilang, penghapusan data duplikat, normalisasi data, serta pembentukan data time series dalam bentuk sliding window.
+
+### 1. Label Transformation
+
+**Proses:**
+Kolom machine_status ditransformasikan menjadi label biner sebagai berikut:
+
+NORMAL → 0 (Normal)
+
+RECOVERING dan BROKEN → 1 (Anomali)
+
+Alasan:
+Transformasi ini dilakukan untuk menyederhanakan permasalahan menjadi deteksi anomali biner, dengan fokus pada identifikasi kondisi tidak normal sebagai indikasi awal kegagalan sistem.
+
+### 2. Missing Value Handling
+
+**Proses:**
+Penanganan nilai hilang dilakukan melalui beberapa langkah, yaitu:
+
+Menghapus kolom sensor_15 karena tidak memiliki nilai valid sama sekali.
+
+Menghapus baris data yang masih mengandung nilai kosong (missing values) pada kolom sensor lainnya.
+
+Alasan:
+Keberadaan nilai hilang pada data sensor dapat mengganggu proses pembelajaran model dan menurunkan performa deteksi anomali. Penghapusan baris dengan nilai hilang dipilih untuk menjaga konsistensi data, mengingat jumlah data awal yang relatif besar.
+
+### 3. Feature Selection
+
+**Proses:**
+Pemilihan fitur dilakukan dengan mengambil seluruh kolom sensor numerik yang tersedia dalam dataset, yaitu sensor_00 hingga sensor_51, serta mengabaikan kolom yang tidak relevan terhadap proses pemodelan. Kolom Unnamed: 0 dihapus karena hanya berfungsi sebagai indeks, sedangkan kolom timestamp digunakan untuk menjaga urutan temporal data namun tidak dimasukkan sebagai fitur input model. Selain itu, kolom machine_status digunakan sebagai label dalam proses klasifikasi.
+
+Kolom sensor_15 dihapus karena seluruh nilainya kosong (missing values 100%).
+
+**Alasan:**
+Seluruh sensor dipertahankan sebagai fitur karena masing-masing merepresentasikan aspek kondisi operasional sistem pompa air. Menggunakan data sensor multivariat memungkinkan model mempelajari hubungan antar sensor secara simultan, yang penting dalam mendeteksi pola anomali yang kompleks.
+
+
+### 4. Duplicate Handling
+
+**Proses:**
+Dilakukan pemeriksaan terhadap data duplikat menggunakan fungsi pendeteksian duplikasi pada dataset.
+
+**Hasil:**
+Tidak ditemukan data duplikat pada dataset.
+
+**Alasan:**
+Penghapusan data duplikat penting untuk mencegah bias pada model akibat pengulangan informasi yang sama dalam proses pelatihan.
+
+
+### 5. Sliding Window Segmentation
+
+**Proses:**
+Data time series disegmentasi menggunakan pendekatan sliding window dengan ukuran jendela (window size) sebanyak 30 timestep dan pergeseran (stride) sebesar 1. Setiap window diberi label anomali apabila proporsi data anomali di dalam window mencapai atau melebihi 20%.
+
+**Alasan:**
+Pendekatan sliding window memungkinkan model menangkap pola temporal dan perubahan dinamika sensor dari waktu ke waktu. Penentuan label berdasarkan proporsi anomali dalam window membantu merepresentasikan kondisi sistem secara lebih kontekstual, bukan hanya berdasarkan satu titik waktu.
+
+### 6. Data Splitting
+
+**Proses:**
+Dataset hasil segmentasi dibagi menjadi tiga bagian berdasarkan urutan waktu, yaitu:
+
+70% data untuk pelatihan (training)
+
+15% data untuk validasi (validation)
+
+15% data untuk pengujian (testing)
+
+**Alasan:**
+Pembagian data secara berurutan dilakukan untuk menjaga sifat temporal data dan mencegah kebocoran informasi (data leakage) dari masa depan ke masa lalu.
+
+### 7. Data Normalization
+
+**Proses:**
+Normalisasi data dilakukan menggunakan metode Min-Max Scaling, di mana setiap nilai sensor ditransformasikan ke dalam rentang [0, 1]. Proses normalisasi dilakukan dengan cara:
+
+Melatih (fit) scaler hanya pada data training
+
+Menerapkan (transform) scaler yang sama pada data validation dan testing
+
+**Alasan:**
+Sensor memiliki rentang nilai yang berbeda-beda. Normalisasi diperlukan untuk mencegah sensor dengan skala besar mendominasi proses pembelajaran model, serta untuk meningkatkan stabilitas dan konvergensi pelatihan jaringan saraf.
+
+### 8. Class Imbalance Handling
+
+**Proses:**
+Karena distribusi kelas antara data normal dan anomali tidak seimbang, digunakan teknik class weighting pada tahap pelatihan model CNN–LSTM.
+
+**Alasan:**
+Penanganan ketidakseimbangan kelas diperlukan agar model tidak bias terhadap kelas mayoritas (normal) dan tetap mampu mengenali pola anomali secara efektif.
+
+
+## Data Modelling
+
+Pada tahap Data Modelling, dilakukan pembangunan dan pelatihan beberapa model klasifikasi untuk mendeteksi anomali pada data sensor IoT sistem pompa air. Tujuan dari tahap ini adalah untuk membandingkan performa model deep learning dengan model machine learning konvensional, serta menentukan model terbaik dalam mendeteksi kondisi anomali.
+
+Dalam penelitian ini digunakan tiga model, yaitu Hybrid CNN–LSTM, Support Vector Machine (SVM), dan Random Forest.
+
+1. Hybrid CNN–LSTM (Model Utama)
+
+Hybrid CNN–LSTM merupakan model deep learning yang menggabungkan Convolutional Neural Network (CNN) dan Long Short-Term Memory (LSTM). CNN digunakan untuk mengekstraksi fitur spasial antar sensor dalam setiap window waktu, sedangkan LSTM digunakan untuk memodelkan ketergantungan temporal pada data time series.
+
+Arsitektur Model
+
+Model CNN–LSTM dibangun menggunakan beberapa lapisan sebagai berikut:
+
+Convolutional Layer (Conv1D)
+
+Conv1D dengan 64 filter dan kernel size 3
+
+Fungsi aktivasi ReLU
+
+Padding same
+
+Regularisasi L2 untuk mengurangi overfitting
+
+Batch Normalization & Max Pooling
+
+Batch normalization untuk menstabilkan proses pelatihan
+
+MaxPooling1D untuk reduksi dimensi fitur
+
+Dropout Layer
+
+Dropout 0.3 digunakan untuk mencegah overfitting
+
+Convolutional Layer Kedua
+
+Conv1D dengan 128 filter
+
+Konfigurasi serupa dengan layer pertama
+
+LSTM Layer
+
+64 unit LSTM
+
+Aktivasi tanh dan sigmoid
+
+Dropout dan recurrent dropout
+
+Return sequences diset False
+
+Fully Connected Layer
+
+Dense 64 neuron dengan aktivasi ReLU
+
+Dropout 0.2
+
+Output Layer
+
+Dense 1 neuron dengan aktivasi sigmoid untuk klasifikasi biner
+
+Parameter Utama Model CNN–LSTM
+
+Conv1D filters: 64 dan 128
+
+Kernel size: 3
+
+LSTM units: 64
+
+Dropout: 0.2–0.3
+
+Regularization: L2 (1e-4)
+
+Output activation: Sigmoid
+
+Kelebihan CNN–LSTM
+
+Mampu menangkap pola spasial dan temporal secara bersamaan
+
+Cocok untuk data sensor IoT multivariat
+
+Efektif untuk deteksi anomali berbasis urutan waktu
+
+Kekurangan CNN–LSTM
+
+Membutuhkan komputasi yang lebih besar
+
+Sensitif terhadap pemilihan hyperparameter
+
+2. Support Vector Machine (SVM)
+
+Support Vector Machine merupakan algoritma klasifikasi yang bekerja dengan mencari hyperplane optimal untuk memisahkan dua kelas. Karena SVM tidak dapat langsung menerima input berbentuk time series, data hasil sliding window diratakan (flatten) terlebih dahulu menjadi vektor satu dimensi.
+
+
+Parameter Model SVM
+
+kernel = 'rbf'
+Menggunakan kernel Radial Basis Function untuk menangkap pola non-linear
+
+C = 1.0
+Parameter regulasi untuk mengontrol trade-off antara margin dan kesalahan klasifikasi
+
+gamma = 'scale'
+Menyesuaikan parameter kernel berdasarkan jumlah fitur
+
+class_weight = 'balanced'
+Digunakan untuk menangani ketidakseimbangan kelas
+
+Kelebihan SVM
+
+Efektif pada dataset berdimensi tinggi
+
+Mampu menangkap hubungan non-linear
+
+Kekurangan SVM
+
+Tidak mempertimbangkan informasi temporal
+
+Kurang optimal untuk data time series kompleks
+
+3. Random Forest
+
+Random Forest adalah algoritma ensemble learning berbasis pohon keputusan yang menggabungkan banyak pohon untuk menghasilkan prediksi yang lebih stabil dan akurat. Seperti SVM, data time series juga diratakan sebelum digunakan sebagai input model.
+
+Parameter Model Random Forest
+
+n_estimators = 200
+Jumlah pohon keputusan dalam hutan
+
+max_depth = None
+Tidak ada batasan kedalaman pohon
+
+min_samples_split = 2
+Jumlah minimum sampel untuk membagi node
+
+min_samples_leaf = 1
+Jumlah minimum sampel pada daun
+
+class_weight = 'balanced'
+Mengatasi ketidakseimbangan kelas
+
+random_state = 42
+Digunakan untuk memastikan reprodusibilitas
+
+n_jobs = -1
+Menggunakan seluruh core CPU untuk pelatihan
+
+Kelebihan Random Forest
+
+Tahan terhadap overfitting
+
+Dapat menangani data non-linear
+
+Mudah diinterpretasikan
+
+Kekurangan Random Forest
+
+Tidak mempertimbangkan urutan waktu
+
+Kurang optimal untuk pola temporal jangka panjang
