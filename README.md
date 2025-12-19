@@ -237,8 +237,6 @@ Dataset Pump Sensor Data dipilih dalam penelitian ini berdasarkan beberapa perti
 | **max** | 220319.0 | 2018-08-31 | 2.54 | ... | 1000.0 | 1000.0 | 1.0 |
 | **std** | 63601.04 | NaN | 0.41 | ... | 65.25 | 109.58 | 0.24 |
 
-> *Catatan: Kolom tengah disingkat (...) untuk keterbacaan.*
-</details>
 
 
 <img width="597" height="455" alt="image" src="https://github.com/user-attachments/assets/8d96455b-bc38-40d2-a41d-0eb54c8f96e1" />
@@ -624,6 +622,18 @@ Model ini cukup ringan dan efisien, sehingga memungkinkan untuk diterapkan pada 
 
 
 ## Evaluation
+<img width="516" height="169" alt="image" src="https://github.com/user-attachments/assets/43665526-027f-4b54-9ecd-da6413ce3c1f" />
+> *classification_report Model Hybrid CNN-LSTM .*
+
+<img width="458" height="164" alt="image" src="https://github.com/user-attachments/assets/8b0735b2-5922-485b-b625-db9671d05106" />
+> *classification_report Model Hybrid CNN-LSTM (dengan Tuning) .*
+
+<img width="463" height="162" alt="image" src="https://github.com/user-attachments/assets/39e7caf5-127a-443e-84b6-3326e9d6a03e" />
+> *classification_report Model SVM .*
+
+<img width="472" height="156" alt="image" src="https://github.com/user-attachments/assets/07721e0e-3a36-4dcb-92e4-7610b5b3a910" />
+> *classification_report Model Random Forest .*
+
 
 | Model | Train Accuracy | 
 | :--- | :--- | 
